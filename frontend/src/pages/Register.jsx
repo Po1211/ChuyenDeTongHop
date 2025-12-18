@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/register.css";
 
 export default function Register() {
+  const navigate = useNavigate();
   return (
     <div className="register-page">
       <div className="register-box">
-        <div className="register-logo">Logo</div>
+        <div className="register-logo" onClick={() => navigate("/LandingPage")}>Logo</div>
 
         <h1>Create Account</h1>
 
@@ -31,7 +33,7 @@ export default function Register() {
         </p>
 
         <p className="signin">
-          Already have an account? <a href="#">Sign in</a>
+          Already have an account? <a href="" onClick={() => navigate("/Login")}>Sign in</a>
         </p>
 
         <footer className="register-footer">

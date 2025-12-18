@@ -110,7 +110,7 @@ export default function App() {
               <p className="small muted">
                 By creating an account, you agree to the Terms of Service and Privacy Policy.
               </p>
-              <p className="muted small">Already a member? <a href="#">Sign In</a></p>
+              <p className="muted small" >Already a member? <a href="" onClick={() => navigate("/Login")}>Sign In</a></p>
             </div>
 
             <div className="search card">
