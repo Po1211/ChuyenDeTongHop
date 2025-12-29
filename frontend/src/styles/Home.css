@@ -1,0 +1,413 @@
+.home-screen {
+  background-color: #f4f1ea;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.card-box, .activity-card-white {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section-title, .main-title-black {
+  font-size: 13px;
+  font-weight: 800;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.home-screen {
+  background-color: #f4f1ea;
+  min-height: 100vh;
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+  gap: 25px;
+}
+
+.left-aside { 
+  width: 300px; 
+  flex-shrink: 0; 
+}
+
+.main-feed-area { 
+  flex-grow: 1; 
+}
+
+.right-aside { 
+  width: 300px; 
+  flex-shrink: 0; 
+}
+
+.home-card-section {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.home-card-title {
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #333;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.goal-text {
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+.home-card-title.no-border { 
+  border-bottom: none; 
+}
+
+.current-reading-item { 
+  display: flex; 
+  gap: 12px; 
+}
+
+.book-cover-shadow {
+  width: 65px; height: 100px; 
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+
+.book-name-link { 
+  font-weight: 800; 
+  font-size: 14px; 
+  color: #333; 
+  cursor: pointer; 
+}
+
+.book-name-link:hover { 
+  text-decoration: underline; 
+}
+
+.author-name-sub { 
+  font-size: 12px; 
+  color: #555; 
+  margin-bottom: 8px; 
+}
+
+.progress-container-mini { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin: 8px 0; 
+}
+
+.bar-bg { 
+  flex: 1; 
+  height: 8px; 
+  background: #eee; 
+  border-radius: 4px; 
+  overflow: hidden; 
+}
+
+.bar-fill { 
+  height: 100%; 
+  background: #5c4722; 
+}
+
+.percent-text { 
+  font-size: 11px; 
+  font-weight: 700; 
+  color: #666; 
+}
+
+.btn-update-small {
+  background: #f4f1ea; 
+  border: 1px solid #d6d0c4;
+  padding: 4px 10px; 
+  border-radius: 3px;
+  font-size: 11px; 
+  font-weight: 700; 
+  cursor: pointer;
+  color: #6f6f6f;
+}
+
+.challenge-body { 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+  padding: 10px 0; 
+}
+
+.challenge-circle-stats {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  border: 4px solid #dcb14a; 
+  border-radius: 50%;
+  width: 60px; 
+  height: 60px; 
+  justify-content: center;
+}
+
+.big-num { 
+  font-size: 20px; 
+  font-weight: 800; 
+  color: #dcb14a; 
+  line-height: 1; 
+}
+
+.sub-txt { 
+  font-size: 10px; 
+  font-weight: 700; 
+  color: #666; 
+}
+
+.bar-bg-gold { 
+  width: 100%; 
+  height: 10px; 
+  background: #eee; 
+  border-radius: 5px; 
+  margin: 5px 0; 
+}
+
+.bar-fill-gold { 
+  height: 100%; 
+  background: #dcb14a; 
+}
+
+.ahead-text { 
+  font-size: 11px; 
+  color: #00635d; 
+  font-weight: 700; 
+}
+
+.shelf-row { 
+  padding: 5px 0; 
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+}
+
+.count-num { 
+  font-weight: 800; 
+  color: #333; 
+  width: 25px; 
+  text-align: right; 
+  font-size: 14px; 
+}
+
+.shelf-link { 
+  font-size: 14px; 
+  color: #00635d; 
+  text-decoration: none; 
+  font-weight: 700; 
+}
+
+.shelf-link:hover { 
+  text-decoration: underline; 
+}
+
+.card-footer-action {
+  border-top: 1px solid #eee; 
+  padding-top: 10px; 
+  margin-top: 15px; 
+  font-size: 12px;
+}
+.card-footer-action.center { 
+  text-align: center; 
+}
+
+.card-footer-action a { 
+  color: #00635d; 
+  text-decoration: none; 
+  font-weight: 700; 
+}
+
+.sep { 
+  margin: 0 5px; 
+  color: #ccc; 
+}
+
+.feed-title-header {
+  color: #333;
+}
+
+.activity-card {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.activity-text {
+  color: #333;
+}
+
+.activity-text .user-name {
+  font-weight: 800;
+  color: #300;
+}
+
+.dot {
+  color: #00635D;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 10px;
+}
+
+.activity-container-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.activity-book-cover-col {
+  flex-shrink: 0;
+}
+
+.feed-book-cover {
+  width: 115px;
+  height: auto;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  border-radius: 2px;
+}
+
+.activity-info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.book-rating-row {
+  font-size: 12px;
+  color: #767676;
+}
+
+.stars { 
+  color: #dcb14a; 
+  margin-right: 5px; 
+}
+
+.user-review-quote {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.activity-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.btn-action {
+  background: none;
+  border: none;
+  font-weight: 800;
+  color: #00635d;
+  cursor: pointer;
+  padding: 0;
+}
+
+.activity-time {
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.card-box {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #382110;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.rec-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.rec-img {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+.rec-book-name { font-weight: 800; font-size: 13px; color: #333; }
+.rec-author { font-size: 11px; color: #777; margin-bottom: 5px; }
+
+.btn-wtr-small {
+  background-color: #5c4722;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.choice-awards .awards-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.choice-desc {
+  font-size: 12px;
+  color: #555;
+}
+
+.footer-link-bold {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #00635d;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .home-layout {
+    grid-template-columns: 240px 1fr;
+  }
+  .home-sidebar-right {
+    display: none;
+  }
+}

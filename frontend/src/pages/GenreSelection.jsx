@@ -24,7 +24,6 @@ export default function GenreSelection() {
   return (
     <div className="selection-screen">
       <div className="selection-container">
-        {/* Logo phóng to đồng bộ */}
         <div className="logo-section" onClick={() => navigate("/")}>
           <img src="/logo.jpg" alt="Logo" className="large-logo" />
         </div>
@@ -48,7 +47,7 @@ export default function GenreSelection() {
         <button 
           className={`btn-continue ${selectedGenres.length > 0 ? "enabled" : ""}`}
           disabled={selectedGenres.length === 0}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/Home")}
         >
           Continue
         </button>

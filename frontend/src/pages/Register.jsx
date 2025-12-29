@@ -53,7 +53,7 @@ export default function Register() {
 
     // Nếu mọi thứ ổn, chuyển sang trang chọn thể loại
     console.log("Registration Successful:", formData);
-    navigate("/select-genres"); // Đảm bảo bạn đã định nghĩa route này trong App.js
+    navigate("/GenreSelection"); // Đảm bảo bạn đã định nghĩa route này trong App.js
   };
 
   return (
