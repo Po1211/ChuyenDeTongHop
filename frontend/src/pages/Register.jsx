@@ -5,7 +5,6 @@ import "../styles/Register.css";
 export default function Register() {
   const navigate = useNavigate();
   
-  // Quản lý trạng thái form
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,46 +13,38 @@ export default function Register() {
   });
 
   const [error, setError] = useState("");
-
-  // Cập nhật giá trị khi nhập
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(""); // Xóa thông báo lỗi khi người dùng sửa
+    setError("");
   };
 
-  // Hàm kiểm tra và chuyển trang
   const handleRegister = (e) => {
     e.preventDefault();
     const { name, email, password, rePassword } = formData;
 
-    // 1. Kiểm tra trống
     if (!name || !email || !password || !rePassword) {
       setError("Please fill in all fields.");
       return;
     }
 
-    // 2. Kiểm tra định dạng Email đơn giản
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email address.");
       return;
     }
 
-    // 3. Kiểm tra độ dài mật khẩu
     if (password.length < 6) {
       setError("Password must be at least 6 characters.");
       return;
     }
 
-    // 4. Kiểm tra mật khẩu trùng khớp
     if (password !== rePassword) {
       setError("Passwords do not match.");
       return;
     }
 
-    // Nếu mọi thứ ổn, chuyển sang trang chọn thể loại
     console.log("Registration Successful:", formData);
-    navigate("/GenreSelection"); // Đảm bảo bạn đã định nghĩa route này trong App.js
+    navigate("/GenreSelection");
   };
 
   return (
@@ -66,7 +57,6 @@ export default function Register() {
         <h1 className="form-title">Create Account</h1>
 
         <form className="register-form" onSubmit={handleRegister}>
-          {/* Hiển thị thông báo lỗi nếu có */}
           {error && <p className="error-message">{error}</p>}
 
           <div className="input-group">

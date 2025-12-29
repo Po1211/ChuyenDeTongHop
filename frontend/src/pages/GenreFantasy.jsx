@@ -40,12 +40,10 @@ export default function GenreFantasyGrid() {
           </p>
         </div>
 
-        {/* LƯỚI CHỈ CHỨA ẢNH BÌA */}
         <div className="book-only-grid">
           {BOOK_COVERS.map((book) => (
             <div key={book.id} className="cover-wrapper">
               <img src={book.cover} alt="Book Cover" className="pure-cover-img" />
-              {/* Hiệu ứng lớp phủ khi di chuột vào (tùy chọn) */}
               <div className="cover-overlay">
                 <button className="quick-add-btn">+</button>
               </div>
