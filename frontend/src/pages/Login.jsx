@@ -1,63 +1,69 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/login.css";
+import "../styles/Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
+
   return (
-    <div className="login-page">
-      <div className="login-box">
-        <div className="login-logo">Logo</div>
+    <div className="login-screen">
+      <div className="login-container">
+        <div className="logo-section" onClick={() => navigate("/")}>
+          <img src="/logo.jpg" alt="Company Logo" className="large-logo" />
+        </div>
 
-        <h1>Sign in</h1>
+        <h1 className="form-title">Sign in</h1>
 
-        <form className="login-form">
-          {/* Trường Email */}
-          <label>Email</label>
-          <input type="email" placeholder="First name and last name" />
+        <form className="login-form" onSubmit={(e) => e.preventDefault()}>
+          <div className="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Email address" />
+          </div>
 
-          {/* Trường Password */}
-          <label className="password-label">
-            Password
-            <a href="#" className="password-assistance">                   Password assistance</a>
-          </label>
-          <input type="password" placeholder="First name and last name" />
+          <div className="input-group">
+            <div className="label-row">
+              <label>Password</label>
+              <a href="#" className="helper-link">Password assistance</a>
+            </div>
+            <input type="password" placeholder="Password" />
+          </div>
 
-          {/* Nút Đăng nhập chính */}
-          <button type="submit" className="signin-button">Sign in</button>
+          <button type="submit" className="btn-submit">
+            Sign in
+          </button>
+        </form>
 
-          {/* Điều khoản */}
-          <p className="terms">
+        <div className="auth-footer-info">
+          <p className="policy-text">
             By signing in, you agree to the Company's Name{" "}
             <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
           </p>
           
-          {/* Checkbox Keep me signed in */}
-          <label className="keep-signed-in">
-            <input type="checkbox" />
-            Keep me signed in. <a href="#">Details.</a>
-          </label>
-
-          {/* Phần chia và Nút Đăng ký */}
-          <div className="separator-text">
-            <hr />
-            <span>New to our service?</span>
-            <hr />
+          <div className="keep-signed-in">
+            <input type="checkbox" id="keep-signed" />
+            <label htmlFor="keep-signed">Keep me signed in. <a href="#">Details</a></label>
           </div>
+
+          <div className="separator">
+            <span>New to our service?</span>
+          </div>
+
           <button 
             type="button" 
-            className="signup-button" 
+            className="btn-signup-redirect"
             onClick={() => navigate("/Register")}
           >
             Sign up
           </button>
-        </form>
-        
-        {/* Footer */}
-        <footer className="login-footer">
-          <a href="#">Term of Service</a>
-          <a href="#">Privacy</a>
-          <a href="#">Help</a>
-          <p>© 2025 Company’s Name, Inc.</p>
+        </div>
+
+        <footer className="footer-links-area">
+          <div className="links-row">
+            <a href="#">Term of Service</a>
+            <a href="#">Privacy</a>
+            <a href="#">Help</a>
+          </div>
+          <p className="copyright">© 2025 Company's Name, Inc.</p>
         </footer>
       </div>
     </div>

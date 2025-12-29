@@ -1,116 +1,161 @@
-/* ===== PAGE ===== */
-.register-page {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.register-screen {
+  width: 100%;
   min-height: 100vh;
-  background: #e6e6e6;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
 }
 
-/* ===== BOX ===== */
-.register-box {
-  background: #ffffff;
-  width: 420px;
-  padding: 40px 48px;
-  border-radius: 4px;
-  text-align: center;
+.register-container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ===== LOGO ===== */
-.register-logo {
-  background: #d0d0d0;
-  display: inline-block;
-  padding: 6px 14px;
-  margin-bottom: 24px;
-  font-weight: bold;
+.logo-section {
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: transform 0.2s;
 }
 
-/* ===== TITLE ===== */
-.register-box h1 {
-  margin-bottom: 24px;
-  font-size: 22px;
+.logo-section:hover {
+  transform: scale(1.05);
 }
 
-/* ===== FORM ===== */
+.large-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.form-title {
+  font-size: 26px;
+  color: #000000;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
 .register-form {
-  text-align: left;
+  width: 100%;
 }
 
-.register-form label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 14px;
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
   display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 6px;
 }
 
-.register-form input {
+.input-group input {
   width: 100%;
-  height: 38px;
-  margin-top: 6px;
-  padding: 0 12px;
+  height: 40px;
+  padding: 0 15px;
   border-radius: 20px;
-  border: 1px solid #888;
+  border: 1px solid #333;
   outline: none;
+  font-size: 14px;
+  color: #000;
 }
 
-.register-form input:focus {
-  border-color: #705213;
+.input-group input:focus {
+  border-color: #5c4722;
+  box-shadow: 0 0 5px rgba(92, 71, 34, 0.3);
 }
 
-.hint {
+.password-hint {
   font-size: 12px;
-  color: #666;
-  margin: 6px 0 0;
+  color: #555;
+  margin-top: 5px;
 }
 
-/* ===== BUTTON ===== */
-.register-form button {
+.btn-submit {
   width: 100%;
-  margin-top: 20px;
-  height: 42px;
-  border-radius: 20px;
+  height: 44px;
+  background-color: #5c4722;
+  color: #ffffff;
   border: none;
-  background: #705213;
-  color: #fff;
-  font-weight: bold;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #4a3a1b;
+}
+
+.auth-footer-info {
+  width: 100%;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #000;
+}
+
+.policy-text a, .login-redirect span {
+  color: #00635d;
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.register-form button:hover {
-  background: #5c430f;
+.login-redirect {
+  margin-top: 10px;
 }
 
-/* ===== TEXT ===== */
-.terms,
-.signin {
-  font-size: 13px;
-  margin-top: 16px;
+.footer-links-area {
+  margin-top: 60px;
+  text-align: center;
 }
 
-.terms a,
-.signin a {
-  color: #00635d;
-  text-decoration: none;
-}
-
-.terms a:hover,
-.signin a:hover {
-  text-decoration: underline;
-}
-
-/* ===== FOOTER ===== */
-.register-footer {
-  margin-top: 30px;
+.links-row a {
   font-size: 12px;
-}
-
-.register-footer a {
-  margin: 0 8px;
-  color: #333;
+  color: #000;
+  margin: 0 10px;
   text-decoration: none;
+  font-weight: 600;
 }
 
-.register-footer p {
-  margin-top: 12px;
-  color: #555;
+.copyright {
+  font-size: 12px;
+  color: #000;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.error-message {
+  background-color: #fffaf0;
+  border: 1px solid #c74d4d;
+  color: #c74d4d;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+}
+
+.register-form label, .form-title, .copyright {
+  color: #000000;
+  font-weight: 800;
 }

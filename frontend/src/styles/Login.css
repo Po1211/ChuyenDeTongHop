@@ -1,184 +1,185 @@
-/* ===== PAGE - Tái sử dụng từ Register.css ===== */
-.login-page {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.login-screen {
+  width: 100%;
   min-height: 100vh;
-  background: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
 }
 
-/* ===== BOX - Tái sử dụng từ Register.css ===== */
-.login-box {
-  background: #ffffff;
-  width: 420px;
-  padding: 40px 48px;
-  border-radius: 4px;
-  text-align: center
-  /* Đảm bảo nội dung căn giữa */
+.login-container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ===== LOGO - Tái sử dụng từ Register.css, nhưng không có nền xám */
-.login-logo {
-  display: inline-block;
-  padding: 6px 14px;
-  margin-bottom: 24px;
-  font-weight: bold;
+.logo-section {
+  cursor: pointer;
+  margin-bottom: 25px;
 }
-/* ===== TITLE - Tái sử dụng từ Register.css ===== */
-.login-box h1 {
+
+.large-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.form-title {
+  font-size: 28px;
+  color: #000000;
+  font-weight: 800;
   margin-bottom: 30px;
-  font-size: 22px;
 }
 
 .login-form {
-  text-align: left;
+  width: 100%;
 }
 
-.login-form label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 18px;
-  display: block;
+.input-group {
+  margin-bottom: 18px;
 }
 
-.password-label {
+.label-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 6px;
 }
 
-.password-assistance {
-  font-weight: normal;
+.input-group label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #000000;
+}
+
+.helper-link {
   font-size: 13px;
   color: #00635d;
   text-decoration: none;
 }
 
-.password-assistance:hover {
-  text-decoration: underline;
-}
-
-.login-form input {
+.input-group input {
   width: 100%;
   height: 40px;
-  margin-top: 6px;
-  padding: 0 12px;
+  padding: 0 15px;
   border-radius: 20px;
-  border: 1px solid #c0c0c0;
+  border: 1px solid #333;
   outline: none;
+  font-size: 14px;
+  color: #000;
 }
 
-.login-form input:focus {
-  border-color: #705213;
-}
-
-/* ===== BUTTONS - Điều chỉnh ===== */
-.login-form .signin-button {
+.btn-submit {
   width: 100%;
-  margin-top: 24px;
-  height: 42px;
-  border-radius: 20px;
+  height: 44px;
+  background-color: #5c4722;
+  color: #ffffff;
   border: none;
-  background: #705213;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.login-form .signin-button:hover {
-  background: #5c430f;
-}
-
-/* Nút Đăng ký (Sign up) */
-.login-form .signup-button {
-  width: 100%;
-  margin-top: 15px;
-  height: 42px;
   border-radius: 20px;
-  border: 1px solid #c0c0c0;
-  background: #f0f0f0;
-  color: #333;
-  font-weight: normal;
+  font-weight: 800;
+  font-size: 15px;
   cursor: pointer;
-}
-
-.login-form .signup-button:hover {
-  background: #e6e6e6;
-}
-
-/* ===== TEXT & CHECKBOX ===== */
-.terms {
-  font-size: 13px;
-  margin-top: 18px;
-  text-align: center;
-}
-
-.terms a {
-  color: #00635d;
-  text-decoration: none;
-}
-
-.terms a:hover {
-  text-decoration: underline;
-}
-
-.keep-signed-in {
-  display: block;
-  font-size: 13px;
-  color: #333;
   margin-top: 10px;
 }
 
-.keep-signed-in input[type="checkbox"] {
-  width: auto;
-  height: auto;
-  margin: 0 5px 0 0;
-  padding: 0;
-  border-radius: 0;
-  border: 1px solid #c0c0c0;
-  vertical-align: middle;
+.btn-submit:hover {
+  background-color: #4a3a1b;
 }
 
-.keep-signed-in a {
+.auth-footer-info {
+  width: 100%;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #000;
+}
+
+.policy-text {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.policy-text a, .keep-signed-in a {
   color: #00635d;
+  font-weight: 800;
   text-decoration: none;
 }
 
-/* ===== SEPARATOR LINE ===== */
-.separator-text {
+.keep-signed-in {
   display: flex;
   align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.separator {
+  position: relative;
   text-align: center;
-  margin: 25px 0 0;
-  font-size: 13px;
-  color: #666;
+  margin: 25px 0;
 }
 
-.separator-text hr {
-  flex-grow: 1;
-  border: none;
-  border-top: 1px solid #e0e0e0;
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #333;
+  z-index: 1;
 }
 
-.separator-text span {
+.separator span {
+  position: relative;
+  background-color: #fff;
   padding: 0 10px;
-  white-space: nowrap;
-}
-
-/* ===== FOOTER - Tái sử dụng từ Register.css ===== */
-.login-footer {
-  margin-top: 40px;
   font-size: 12px;
+  color: #000;
+  font-weight: 800;
+  z-index: 2;
 }
 
-.login-footer a {
-  margin: 0 8px;
-  color: #333;
+.btn-signup-redirect {
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #333;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.footer-links-area {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.links-row a {
+  font-size: 12px;
+  color: #000;
+  margin: 0 10px;
   text-decoration: none;
+  font-weight: 800;
 }
 
-.login-footer p {
-  margin-top: 12px;
-  color: #555;
-  font-weight: bold;
+.copyright {
+  font-size: 12px;
+  color: #000;
+  font-weight: 800;
+  margin-top: 10px;
 }
