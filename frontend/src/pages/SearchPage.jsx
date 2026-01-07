@@ -20,6 +20,7 @@ export default function SearchPage() {
     if (!activeQuery?.trim()) return;
 
     let cancelled = false;
+    setLoading(true);
 
     fetch(
       `http://localhost:4000/api/books/search?q=${encodeURIComponent(
@@ -125,33 +126,45 @@ export default function SearchPage() {
 
           {/* RESULTS LIST */}
           <div className="results-list">
-            {results.map((book) => (
-              <div
-                key={book.id}
-                className="search-book-item"
-                onClick={() => window.open(`/bookdetails/${book.id}`, "_blank")}
-                style={{ cursor: "pointer" }}
-              >
-                <img
-                  src={book.cover_image_url}
-                  alt={book.title}
-                  className="search-book-cover"
-                />
+            {results.map((book) => {
+              const coverUrl = book.cover_image_url
+                ? `http://localhost:4000${book.cover_image_url}`
+                : "/book-placeholder.png";
 
-                <div className="search-book-info">
-                  <h3 className="search-book-title">{book.title}</h3>
-                  <p className="search-book-author">by {book.author}</p>
+              return (
+                <div
+                  key={book.id}
+                  className="search-book-item"
+                  onClick={() =>
+                    window.open(`/bookdetails/${book.id}`, "_blank")
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  <img
+                    src={coverUrl}
+                    alt={book.title}
+                    className="search-book-cover"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/book-placeholder.png";
+                    }}
+                  />
 
-                  <div className="search-book-rating">
-                    <span className="stars-red">★★★★☆</span>
-                    <span className="rating-stats">
-                      {book.rating ?? "—"} avg rating — {book.votes} ratings —
-                      published {book.published_year}
-                    </span>
+                  <div className="search-book-info">
+                    <h3 className="search-book-title">{book.title}</h3>
+                    <p className="search-book-author">by {book.author}</p>
+
+                    <div className="search-book-rating">
+                      <span className="stars-red">★★★★☆</span>
+                      <span className="rating-stats">
+                        {book.rating ?? "—"} avg rating — {book.votes} ratings —
+                        published {book.published_year}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </main>
       </div>
