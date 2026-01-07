@@ -1,21 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "../styles/Header.css";
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { user, setUser } = useAuth();
+
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
   const [isBrowseOpen, setIsBrowseOpen] = useState(false);
+  const [query, setQuery] = useState("");
 
   const communityRef = useRef(null);
   const browseRef = useRef(null);
 
+  /* ================= CLICK OUTSIDE DROPDOWNS ================= */
   useEffect(() => {
     function handleClickOutside(event) {
       if (browseRef.current && !browseRef.current.contains(event.target)) {
         setIsBrowseOpen(false);
       }
-      if (communityRef.current && !communityRef.current.contains(event.target)) {
+      if (
+        communityRef.current &&
+        !communityRef.current.contains(event.target)
+      ) {
         setIsCommunityOpen(false);
       }
     }
@@ -23,39 +32,69 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const toggleBrowse = () => {
-    setIsBrowseOpen(!isBrowseOpen);
-    setIsCommunityOpen(false);
-  };
+  /* ================= ROLE-BASED ROUTE GUARD ================= */
+  useEffect(() => {
+    if (!user) return;
 
-  const toggleCommunity = () => {
-    setIsCommunityOpen(!isCommunityOpen);
-    setIsBrowseOpen(false);
+    const path = location.pathname;
+
+    if (user.role !== "admin" && path.startsWith("/admin")) {
+      navigate("/home", { replace: true });
+    }
+
+    if (
+      user.role === "admin" &&
+      (path.startsWith("/profile") || path.startsWith("/mybooks"))
+    ) {
+      navigate("/home", { replace: true });
+    }
+  }, [location.pathname, user, navigate]);
+
+  /* ================= LOGOUT ================= */
+  const handleLogout = async () => {
+    await fetch("http://localhost:4000/api/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+    setUser(null);
+    navigate("/home");
   };
 
   return (
     <nav className="main-header">
       <div className="header-inner">
+        {/* LEFT */}
         <div className="header-left">
-          <img 
-            src="/logo.jpg" 
-            alt="Logo" 
-            className="nav-logo" 
-            onClick={() => navigate("/home")} 
-            onError={(e) => { e.target.src = "https://via.placeholder.com/45x45?text=Logo" }}
+          <img
+            src="/logo.jpg"
+            alt="Logo"
+            className="nav-logo"
+            onClick={() => navigate("/home")}
           />
-          
+
           <div className="nav-menu">
-            <span className="nav-link" onClick={() => navigate("/home")}>Home</span>
-            <span className="nav-link">My Books</span>
-            
+            <span className="nav-link" onClick={() => navigate("/home")}>
+              Home
+            </span>
+
+            {user?.role !== "admin" && (
+              <span className="nav-link" onClick={() => navigate("/mybooks")}>
+                My Books
+              </span>
+            )}
+
+            {/* BROWSE */}
             <div className="nav-item-dropdown" ref={browseRef}>
-              <span 
+              <span
                 className={`nav-link ${isBrowseOpen ? "active-dropdown" : ""}`}
-                onClick={() => { setIsBrowseOpen(!isBrowseOpen); setIsCommunityOpen(false); }}
+                onClick={() => {
+                  setIsBrowseOpen(!isBrowseOpen);
+                  setIsCommunityOpen(false);
+                }}
               >
                 Browse ▾
               </span>
+
               {isBrowseOpen && (
                 <div className="browse-dropdown-box">
                   <div className="browse-column right-col">
@@ -83,15 +122,18 @@ export default function Header() {
                 </div>
               )}
             </div>
-            
+
+            {/* COMMUNITY */}
             <div className="nav-item-dropdown" ref={communityRef}>
-              <span 
-                className={`nav-link ${isCommunityOpen ? "active-dropdown" : ""}`}
+              <span
+                className={`nav-link ${
+                  isCommunityOpen ? "active-dropdown" : ""
+                }`}
                 onClick={() => setIsCommunityOpen(!isCommunityOpen)}
               >
                 Community ▾
               </span>
-              
+
               {isCommunityOpen && (
                 <ul className="dropdown-menu">
                   <li>Groups</li>
@@ -105,42 +147,61 @@ export default function Header() {
           </div>
         </div>
 
+        {/* CENTER */}
         <div className="header-center">
           <div className="search-wrapper">
-            <input type="text" placeholder="Search books" className="header-search-input" />
-            <button className="search-icon-btn">🔍</button>
+            <input
+              type="text"
+              placeholder="Search books"
+              className="header-search-input"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && query.trim()) {
+                  navigate(`/search?q=${encodeURIComponent(query)}&type=all`);
+                }
+              }}
+            />
+            <button
+              className="search-icon-btn"
+              onClick={() => {
+                if (query.trim()) {
+                  navigate(`/search?q=${encodeURIComponent(query)}&type=all`);
+                }
+              }}
+            >
+              🔍
+            </button>
           </div>
         </div>
 
+        {/* RIGHT */}
         <div className="header-right">
-          <div className="header-icon-item" title="Notifications">
-            <div className="icon-wrapper hover-effect">
-              <span className="notification-badge">9+</span>
-              <i className="fas fa-bell"></i>
-            </div>
-          </div>
+          {user ? (
+            <div className="header-user-profile">
+              <div
+                className="user-profile-clickable"
+                onClick={() =>
+                  navigate(user.role === "admin" ? "/admin" : "/profile")
+                }
+              >
+                <img
+                  src="/avatar.jpg"
+                  alt="User"
+                  className="user-avatar-small"
+                />
+                <span className="nav-link user-name">{user.full_name}</span>
+              </div>
 
-          <div className="header-icon-item" title="Discussions">
-            <div className="icon-wrapper hover-effect">
-              <i className="fas fa-comments"></i>
+              <button className="btn-logout" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
-          </div>
-
-          <div className="header-icon-item" title="Messages">
-            <div className="icon-wrapper hover-effect">
-              <i className="fas fa-envelope"></i>
-            </div>
-          </div>
-
-          <div className="header-icon-item" title="Friends">
-            <div className="icon-wrapper hover-effect">
-              <i className="fas fa-user-friends"></i>
-            </div>
-          </div>
-
-          <div className="header-user-profile" onClick={() => navigate("/profile")}>
-            <img src="/avatar.jpg" alt="User" className="user-avatar-small" />
-          </div>
+          ) : (
+            <span className="nav-link" onClick={() => navigate("/login")}>
+              Login
+            </span>
+          )}
         </div>
       </div>
     </nav>

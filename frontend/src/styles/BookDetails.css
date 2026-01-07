@@ -1,0 +1,402 @@
+/* ================= PAGE LAYOUT ================= */
+
+.book-details-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.details-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  padding: 30px 20px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+
+.details-left-col {
+  width: 150px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.sticky-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-book-cover {
+  width: 150px;
+  height: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* WANT TO READ BUTTON */
+.btn-wtr-full {
+  width: 100%;
+  background-color: #409d69;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  font-weight: 800;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.2s ease;
+}
+
+.btn-wtr-full:hover {
+  background-color: #368559;
+}
+
+/* Already added state */
+.btn-wtr-full.added {
+  background-color: #ffffff;
+  color: #409d69;
+  border: 2px solid #409d69;
+}
+
+.btn-wtr-full.added:hover {
+  background-color: #f3faf6;
+}
+
+/* ================= RIGHT CONTENT ================= */
+
+.details-right-col {
+  flex: 1;
+}
+
+.book-title-display {
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.2;
+}
+
+.book-author-display {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+
+.author-name {
+  color: #00635d;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.rating-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #767676;
+}
+
+.stars-fill {
+  color: #dcb14a;
+  font-size: 16px;
+}
+
+.avg-rating-bold {
+  font-weight: 800;
+  color: #333;
+}
+
+.dot-sep {
+  color: #ccc;
+}
+
+/* ================= DESCRIPTION ================= */
+
+.book-description-section {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.description-text {
+  margin-bottom: 20px;
+  font-family: "Merriweather", serif;
+  line-height: 1.7;
+  color: #181818;
+}
+
+/* DETAILS TABLE */
+.book-details-table {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-row {
+  display: flex;
+  font-size: 13px;
+}
+
+.detail-label {
+  width: 120px;
+  color: #767676;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  color: #333;
+}
+
+/* GENRES */
+.book-genres-row {
+  margin-top: 20px;
+  display: flex;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.book-genres-row .meta-label {
+  width: 120px;      
+  color: #767676;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  color: #00635d;
+  font-weight: 600;
+}
+
+.genre-tags span {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.genre-tags span:hover {
+  text-decoration: underline;
+}
+
+/* ================= AUTHOR ================= */
+
+.about-author-section {
+  padding: 20px 0;
+}
+
+.author-profile-box {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.author-large-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.author-full-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #333;
+}
+
+.author-bio-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* ================= DIVIDERS ================= */
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid #ebebeb;
+  margin: 35px 0;
+}
+
+/* ================= ALERT ================= */
+
+.alert-box {
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.alert-box.success {
+  background-color: #e6f4ea;
+  color: #1e4620;
+}
+
+.alert-box.error {
+  background-color: #fdecea;
+  color: #611a15;
+}
+
+/* ================= REVIEW EDITOR ================= */
+
+.my-review-status {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+
+.review-prompt p {
+  font-size: 14px;
+  font-weight: 800;
+  color: #382110;
+  margin-bottom: 10px;
+}
+
+/* STAR SELECTOR */
+.stars-outline-big {
+  display: flex;
+  gap: 4px;
+  font-size: 26px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.stars-outline-big span {
+  transition: color 0.15s ease;
+}
+
+.stars-outline-big span:hover {
+  color: #dcb14a;
+}
+
+/* TEXTAREA */
+.review-prompt textarea {
+  width: 100%;
+  min-height: 90px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.review-prompt textarea:focus {
+  outline: none;
+  border-color: #00635d;
+}
+
+/* SAVE BUTTON */
+.btn-write-review {
+  background-color: #409d69;
+  color: #ffffff;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-write-review:hover {
+  background-color: #368559;
+}
+
+/* ================= REVIEWS ================= */
+
+.review-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #382110;
+  margin-bottom: 6px;
+}
+
+.review-user strong {
+  font-weight: 800;
+}
+
+.user-avatar-mini {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.review-content {
+  margin-left: 40px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.review-footer {
+  margin-left: 40px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-footer button {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.review-footer button:hover {
+  text-decoration: underline;
+}
+
+/* ================= PAGINATION ================= */
+
+.reviews-section > div:last-child {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.reviews-section button {
+  background: #f4f1ea;
+  border: 1px solid #d6d0c4;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.reviews-section button:hover {
+  background: #ede9de;
+}
+
+.section-header {
+  font-size: 13px;
+  font-weight: 800;
+  color: #382110;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}

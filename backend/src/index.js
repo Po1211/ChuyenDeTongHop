@@ -1,26 +1,43 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+require("dotenv").config();
+
+const path = require("path");
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+
+const authRoutes = require("./routes/auth");
+const bookRoutes = require("./routes/books");
+const profileRoutes = require("./routes/profile");
 
 const app = express();
 const port = process.env.PORT || 4000;
 
-// nếu cần serve static frontend trong production
-// app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
 app.use(express.json());
-app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:5173' }));
+app.use(cookieParser());
 
-app.get('/api/hello', (req, res) => {
-  res.json({ msg: 'Hello from backend!' });
-});
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 
-// ví dụ route
-app.get('/api/time', (req, res) => {
-  res.json({ time: new Date().toISOString() });
-});
+app.use("/covers", express.static(path.join(__dirname, "../public/covers")));
 
+/* ================= ROUTES ================= */
+app.use("/api/auth", authRoutes);
+app.use("/api/books", bookRoutes);
+app.use("/api/profile", profileRoutes);
+app.use("/api/mybooks", require("./routes/mybooks"));
+
+app.use("/api/admin/authors", require("./routes/admin/authors"));
+app.use("/api/admin/books", require("./routes/admin/books"));
+app.use("/api/admin/categories", require("./routes/admin/categories"));
+
+app.use("/api/upload", require("./routes/upload"));
+
+/* ================= START SERVER ================= */
 app.listen(port, () => {
   console.log(`Backend listening at http://localhost:${port}`);
 });

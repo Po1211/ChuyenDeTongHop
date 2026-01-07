@@ -1,0 +1,451 @@
+.admin-page {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-toggle button {
+    margin-left: 10px;
+    padding: 6px 14px;
+    border: 1px solid #382110;
+    background: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.admin-toggle .active {
+    background: #382110;
+    color: white;
+}
+
+.admin-search {
+    width: 100%;
+    padding: 8px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.admin-table th {
+    background: #f4f1ea;
+}
+
+.admin-table button {
+    margin-right: 5px;
+}
+
+/* ================= ADMIN TABLE FIXES ================= */
+
+/* Allow horizontal scrolling instead of breaking layout */
+.admin-page {
+    overflow-x: auto;
+}
+
+/* Keep table from exploding width */
+.admin-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* Control cell wrapping */
+.admin-table th,
+.admin-table td {
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 180px;
+}
+
+/* Book cover image styling */
+.admin-book-cover {
+    width: 50px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Keep action buttons compact */
+.admin-table td:last-child {
+    white-space: nowrap;
+}
+
+/* Optional: smoother scroll */
+.admin-page::-webkit-scrollbar {
+    height: 8px;
+}   
+
+/* ================= ADMIN ACTION BUTTONS ================= */
+
+.admin-action-cell {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+/* Base button style */
+.admin-action-cell button {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+}
+
+/* Edit button */
+.admin-action-cell button:first-child {
+    background-color: #ffffff;
+    color: #00635d;
+    border: 1px solid #00635d;
+}
+
+.admin-action-cell button:first-child:hover {
+    background-color: #00635d;
+    color: #ffffff;
+}
+
+/* Delete button */
+.admin-action-cell button:last-child {
+    background-color: #ffffff;
+    color: #c74d4d;
+    border: 1px solid #c74d4d;
+}
+
+.admin-action-cell button:last-child:hover {
+    background-color: #c74d4d;
+    color: #ffffff;
+}
+
+.admin-action-cell button:active {
+    transform: translateY(1px);
+}
+
+.admin-table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.admin-table th,
+.admin-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-table th:last-child,
+.admin-table td:last-child {
+    width: 110px;
+    min-width: 110px;
+    max-width: 110px;
+}
+
+
+.admin-action-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.admin-action-cell button {
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+.admin-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.admin-add-btn {
+    background-color: #00635d;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.admin-add-btn:hover {
+    background-color: #004f4a;
+}
+
+.admin-add-btn:active {
+    transform: translateY(1px);
+}
+
+.admin-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.admin-modal {
+    background: #fff;
+    padding: 20px;
+    width: 420px;
+    border-radius: 4px;
+}
+
+.admin-modal input,
+.admin-modal select {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 6px;
+}
+
+.admin-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.admin-modal-actions .danger {
+    background: #c74d4d;
+    color: white;
+}
+
+.admin-link {
+    color: #00635d;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.image-preview-modal img {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.admin-toolbar select {
+    padding: 6px;
+}
+
+
+
+.genre-select label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+
+.genre-select {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background-color: #fafafa;
+
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.genre-select p {
+    font-size: 13px;
+    font-weight: 800;
+    color: #382110;
+    margin-bottom: 8px;
+}
+
+.genre-select-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 12px;
+}
+
+.genre-select-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.genre-select-item input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.admin-description-cell {
+    max-width: 300px;
+    white-space: normal;
+    line-height: 1.4;
+    color: #333;
+}
+
+.admin-page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.admin-table {
+    min-width: 1300px;
+}
+
+.admin-cover-preview {
+    width: 90px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* ================= ADMIN MODAL SIZE ================= */
+
+.admin-modal {
+    width: 600px;
+    /* 👈 wider modal */
+    max-width: 90vw;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Make inputs consistent */
+.admin-modal input,
+.admin-modal select,
+.admin-modal textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ================= DESCRIPTION FIELD ================= */
+
+.admin-description-input {
+    min-height: 120px;
+    /* 👈 bigger description */
+    resize: vertical;
+    line-height: 1.5;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+
+.admin-cover-preview {
+    width: 100px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* ===== Admin Modal Action Buttons ===== */
+.admin-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e6e6e6;
+}
+
+/* Cancel button */
+.admin-modal-actions button:first-child {
+    background-color: #ffffff;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-modal-actions button:first-child:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+}
+
+/* Save button */
+.admin-modal-actions button:last-child {
+    background-color: #382110;
+    /* same brown as header */
+    color: #ffffff;
+    border: 1px solid #2c1a0c;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.admin-modal-actions button:last-child:hover {
+    background-color: #2c1a0c;
+}
+
+.admin-modal-actions button:last-child:active {
+    transform: translateY(1px);
+}
+
+/* Disabled save (uploading state) */
+.admin-modal-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===== Validation styles ===== */
+.error-text {
+    color: #c74d4d;
+    font-size: 12px;
+    margin: 4px 0 10px;
+    font-weight: 600;
+}
+
+.error-input {
+    border: 1px solid #c74d4d !important;
+    background-color: #fffafa;
+}
+
+/* Larger modal */
+.admin-modal-large {
+    max-width: 650px;
+}
+
+/* Bigger description */
+.admin-description-input {
+    min-height: 120px;
+    resize: vertical;
+}

@@ -1,0 +1,307 @@
+/* PAGE */
+.profile-screen {
+  background-color: #f4f1ea;
+  min-height: 100vh;
+}
+
+/* LAYOUT */
+.profile-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+  gap: 25px;
+}
+
+.profile-left,
+.profile-right {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.profile-main {
+  flex-grow: 1;
+}
+
+/* CARD */
+.card-box {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* PROFILE */
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #382110;
+  text-align: center;
+}
+
+.profile-meta {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ABOUT */
+.about-text {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ACTIVITY */
+.activity-card {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.activity-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.activity-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.activity-text .user-name {
+  font-weight: 800;
+  color: #300;
+}
+
+.dot {
+  color: #00635d;
+}
+
+/* ACTIONS */
+.activity-footer-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.btn-action {
+  background: none;
+  border: none;
+  font-weight: 800;
+  color: #00635d;
+  cursor: pointer;
+  padding: 0;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.section-title{
+    padding-top: 8px;
+    text-align: center;
+}
+
+
+.shelf-row{
+    padding-bottom: 15px;
+}
+
+.count-num{
+    text-align: center;
+}
+
+/* ===== Profile Add-ons (Non-destructive) ===== */
+
+.profile-activity-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.activity-info-col {
+  flex: 1;
+}
+
+.activity-right-col {
+  min-width: 160px;
+  text-align: right;
+}
+
+/* Home-matching text */
+.profile-screen,
+.profile-screen * {
+  color: #333;
+}
+
+.book-name-link {
+  font-weight: 800;
+  font-size: 14px;
+  color: #382110;
+  cursor: pointer;
+}
+
+.book-name-link:hover {
+  text-decoration: underline;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.link,
+.footer-link {
+  color: #00635d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.footer-link:hover,
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Status button (reuse Home style) */
+.status-btn {
+  background: #f4f1ea;
+  border: 1px solid #d6d0c4;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.status-btn.green {
+  background: #3b8754;
+  color: white;
+  border: none;
+}
+
+/* Rating */
+.rating-row {
+  font-size: 12px;
+  color: #555;
+}
+
+.stars {
+  color: #dcb14a;
+  margin-left: 5px;
+}
+
+.stars.faded {
+  color: #ccc;
+}
+
+/* ===== Status Dropdown ===== */
+.status-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.status-popup {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 20;
+  min-width: 160px;
+}
+
+.status-popup div {
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.status-popup div:hover {
+  background: #f4f1ea;
+}
+
+.status-popup .active {
+  font-weight: 800;
+  color: #999;
+  cursor: default;
+}
+
+/* ===== Status Dropdown ===== */
+.status-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.status-dropdown {
+  position: absolute;
+  right: 0;
+  top: 36px;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  width: 170px;
+  z-index: 50;
+}
+
+.status-option {
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+}
+
+.status-option:hover {
+  background: #f4f1ea;
+}
+
+.status-option.active {
+  font-weight: 800;
+  background: #f4f1ea;
+  cursor: default;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .profile-right {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+  }
+
+  .profile-left,
+  .profile-right {
+    width: 100%;
+  }
+}

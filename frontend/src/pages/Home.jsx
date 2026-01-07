@@ -16,12 +16,6 @@ export default function Home() {
               <div className="book-info-right">
                 <p className="book-name-link">The Great Gatsby</p>
                 <p className="author-name-sub">by F. Scott Fitzgerald</p>
-                <div className="progress-container-mini">
-                  <div className="bar-bg">
-                    <div className="bar-fill" style={{ width: "45%" }}></div>
-                  </div>
-                  <span className="percent-text">45%</span>
-                </div>
                 <button className="btn-update-small">Update progress</button>
               </div>
             </div>
@@ -30,25 +24,6 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="home-card-section challenge-gold">
-            <h2 className="home-card-title">2025 READING CHALLENGE</h2>
-            <div className="challenge-body">
-              <div className="challenge-circle-stats">
-                <span className="big-num">12</span>
-                <span className="sub-txt">books</span>
-              </div>
-              <div className="challenge-details">
-                <p className="goal-text">You have read <strong>12 of 20</strong> books.</p>
-                <div className="bar-bg-gold">
-                  <div className="bar-fill-gold" style={{ width: "60%" }}></div>
-                </div>
-                <p className="ahead-text">2 books (10%) ahead of schedule</p>
-              </div>
-            </div>
-            <div className="card-footer-action center">
-              <a href="#">View Challenge</a>
-            </div>
-          </section>
           <section className="home-card-section">
             <h2 className="home-card-title">BOOKSHELVES</h2>
             <nav className="shelf-navigation">
@@ -219,12 +194,6 @@ export default function Home() {
               </div>
             </div>
             <a href="#" className="footer-link-bold">View all recommendations</a>
-          </div>
-          <div className="card-box choice-awards">
-            <h3 className="card-title">2025 CHOICE AWARDS</h3>
-            <p className="choice-desc">The best books of the year as chosen by readers.</p>
-            <img src="/book2025.png" alt="Awards" className="awards-banner" />
-            <a href="#" className="footer-link-bold">See the winners</a>
           </div>
         </aside>
       </div>

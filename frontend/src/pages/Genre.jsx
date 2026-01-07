@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import "../styles/GenreFantasy.css";
+import "../styles/Genre.css";
 
 // Danh sách ảnh bìa mẫu
 const BOOK_COVERS = [

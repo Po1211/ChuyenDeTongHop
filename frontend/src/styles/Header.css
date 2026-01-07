@@ -265,3 +265,52 @@
   content: "";
   margin-left: 5px;
 }
+
+.header-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.header-user-profile .nav-link {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.user-profile-clickable {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.user-profile-clickable:hover .user-name {
+  text-decoration: underline;
+}
+
+/* ===== Logout Button ===== */
+.btn-logout {
+  margin-left: 10px;
+  background-color: #382110; /* brown */
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-logout:hover {
+  background-color: #2c1a0c;
+}
+
+.btn-logout:active {
+  transform: translateY(1px);
+}
